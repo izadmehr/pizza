@@ -1,27 +1,27 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Mutation } from 'components'
-import PostForm from 'modules/blog/forms/Post'
-import { CREATE_POST, ALL_POSTS } from 'modules/blog/gql'
-import { H2 } from 'components/Typography'
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
+import { Mutation } from "components";
+import PostForm from "modules/blog/forms/Post";
+import { CREATE_POST, ALL_POSTS } from "modules/blog/gql";
+import { H2 } from "components/Typography";
 
 const updatePostCache = (cache, { data: { createPost } }) => {
-  const postsCache = cache.readQuery({ query: ALL_POSTS })
+  const postsCache = cache.readQuery({ query: ALL_POSTS });
   cache.writeQuery({
     query: ALL_POSTS,
     data: {
-      allPosts: [createPost, ...postsCache.allPosts],
-    },
-  })
-}
+      allPosts: [createPost, ...postsCache.allPosts]
+    }
+  });
+};
 
 export const PostCreatePage = ({ history: { push } }) => (
   <section>
     <Mutation
       mutation={CREATE_POST}
       update={updatePostCache}
-      onCompleted={({ createPost: { id }}) => push(`/posts/${id}`)}
+      onCompleted={({ createPost: { id } }) => push(`/posts/${id}`)}
     >
       {mutate => (
         <Fragment>
@@ -31,12 +31,12 @@ export const PostCreatePage = ({ history: { push } }) => (
       )}
     </Mutation>
   </section>
-)
+);
 
 PostCreatePage.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
+    push: PropTypes.func.isRequired
+  }).isRequired
+};
 
-export default PostCreatePage
+export default PostCreatePage;

@@ -1,33 +1,34 @@
-import React from 'react'
-import { mount } from 'enzyme'
-import Provider from 'AppProvider'
-import { mutation_mock, MOCK_MUTATION } from 'gql'
-import Mutation from '../index'
+import React from "react";
+import { mount } from "enzyme";
 
+import Provider from "AppProvider";
+import { mutation_mock, MOCK_MUTATION } from "gql";
 
-describe('Mutation Component', () => {
-  it('renders without error', () => {
+import Mutation from "../index";
+
+describe("Mutation Component", () => {
+  it("renders without error", () => {
     const wrapper = mount(
       <Provider mocks={[mutation_mock]}>
         <Mutation mutation={MOCK_MUTATION}>
-          {(mutate) => <button onClick={mutate}>button</button>}
+          {mutate => <button onClick={mutate}>button</button>}
         </Mutation>
-      </Provider>,
-    )
-    expect(wrapper.find('button').text()).toEqual('button')
-  })
+      </Provider>
+    );
+    expect(wrapper.find("button").text()).toEqual("button");
+  });
 
-  it('renders loading state', () => {
+  it("renders loading state", () => {
     const wrapper = mount(
       <Provider mocks={[mutation_mock]}>
         <Mutation mutation={MOCK_MUTATION}>
-          {(mutate) => <button onClick={mutate}>button</button>}
+          {mutate => <button onClick={mutate}>button</button>}
         </Mutation>
-      </Provider>,
-    )
-    wrapper.find('button').simulate('click')
-    expect(wrapper.find('SpinnerComponent').length).toEqual(1)
-  })
+      </Provider>
+    );
+    wrapper.find("button").simulate("click");
+    expect(wrapper.find("SpinnerComponent").length).toEqual(1);
+  });
 
   // TODO: Make this work
   // it('renders error state', async () => {
@@ -44,4 +45,4 @@ describe('Mutation Component', () => {
   //     expect(wrapper).toMatchSnapshot()
   //   })
   // })
-})
+});

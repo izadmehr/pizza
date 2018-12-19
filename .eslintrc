@@ -2,7 +2,19 @@
   "parser": "babel-eslint",
   "extends": [
     "@strv/javascript/environments/react/v16",
-    "@strv/javascript/environments/react/v15"
+    "@strv/javascript/environments/react/v15",
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "import",
+    "react",
+    "prettier"
   ],
   "settings": {
     "import/resolver": {
@@ -12,20 +24,36 @@
     }
   },
   "rules": {
+    "react/jsx-filename-extension": 0,
     "react/jsx-boolean-value": "error",
     "max-classes-per-file": 0,
     "import/no-named-as-default": 0,
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          // Built-in & external types are first
+          "internal",
+          [
+            "sibling",
+            "parent"
+          ],
+          // Then sibling and parent types. They can be mingled together
+          "index"
+          // Then the index file
+          // Then the rest: internal and external type
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": 0,
     "react/jsx-key": "error",
     "max-len": [
       "error",
       {
         "code": 100
-      }
-    ],
-    "import/newline-after-import": [
-      "error",
-      {
-        "count": 2
       }
     ]
   },

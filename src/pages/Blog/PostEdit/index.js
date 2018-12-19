@@ -1,19 +1,24 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { H2 } from 'components/Typography'
-import { Query, Mutation } from 'components'
-import { POST_DETAIL, UPDATE_POST } from 'modules/blog/gql'
-import PostForm from 'modules/blog/forms/Post'
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
+import { H2 } from "components/Typography";
+import { Query, Mutation } from "components";
+import { POST_DETAIL, UPDATE_POST } from "modules/blog/gql";
+import PostForm from "modules/blog/forms/Post";
 
-export const PostEditPage = ({ history: { push }, match: { params: { postId } } }) => (
+export const PostEditPage = ({
+  history: { push },
+  match: {
+    params: { postId }
+  }
+}) => (
   <section>
-    <Query
-      query={POST_DETAIL}
-      variables={{ id: postId }}
-    >
+    <Query query={POST_DETAIL} variables={{ id: postId }}>
       {({ data: { Post } }) => (
-        <Mutation mutation={UPDATE_POST} onCompleted={() => push(`/posts/${postId}`)}>
+        <Mutation
+          mutation={UPDATE_POST}
+          onCompleted={() => push(`/posts/${postId}`)}
+        >
           {mutate => (
             <Fragment>
               <H2>Edit Post</H2>
@@ -27,17 +32,17 @@ export const PostEditPage = ({ history: { push }, match: { params: { postId } } 
       )}
     </Query>
   </section>
-)
+);
 
 PostEditPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      postId: PropTypes.string.isRequired,
-    }).isRequired,
+      postId: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired,
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-}
+    push: PropTypes.func.isRequired
+  }).isRequired
+};
 
-export default PostEditPage
+export default PostEditPage;

@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Label from '../Label'
-import ErrorText from '../ErrorText'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
+import Label from "../Label";
+import ErrorText from "../ErrorText";
 
 export const StyledInput = styled.input`
   padding: 10px 10px;
   border: 1px solid ${props => props.theme.color.lightGrey};
   margin-top: 10px;
-`
+`;
 
 const Input = ({
   id,
@@ -20,7 +20,7 @@ const Input = ({
   type,
   placeholder,
   handleChange,
-  handleBlur,
+  handleBlur
 }) => (
   <Label htmlFor={id}>
     {label}
@@ -35,14 +35,14 @@ const Input = ({
     />
     {errors[id] && touched[id] && <ErrorText>{errors[id]}</ErrorText>}
   </Label>
-)
+);
 
 Input.defaultProps = {
-  type: 'text',
-  placeholder: '',
-  label: '',
-  id: '',
-}
+  type: "text",
+  placeholder: "",
+  label: "",
+  id: ""
+};
 
 Input.propTypes = {
   id: PropTypes.string,
@@ -53,7 +53,7 @@ Input.propTypes = {
   touched: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
-}
+  handleBlur: PropTypes.func.isRequired
+};
 
-export default Input
+export default Input;

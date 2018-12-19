@@ -1,25 +1,24 @@
-import gql from 'graphql-tag'
-
+import gql from "graphql-tag";
 
 export const ALL_POSTS = gql`
-  query allPosts{
+  query allPosts {
     allPosts(orderBy: createdAt_DESC) {
       id
       title
       text
     }
   }
-`
+`;
 
 export const POST_DETAIL = gql`
   query PostDetail($id: ID!) {
-    Post(id: $id){
+    Post(id: $id) {
       id
       title
       text
     }
   }
-`
+`;
 
 export const CREATE_POST = gql`
   mutation createPost($title: String!, $text: String!) {
@@ -29,7 +28,7 @@ export const CREATE_POST = gql`
       text
     }
   }
-`
+`;
 
 export const UPDATE_POST = gql`
   mutation updatePost($id: ID!, $title: String!, $text: String!) {
@@ -39,7 +38,7 @@ export const UPDATE_POST = gql`
       text
     }
   }
-`
+`;
 
 export const DELETE_POST = gql`
   mutation deletePost($id: ID!) {
@@ -47,4 +46,4 @@ export const DELETE_POST = gql`
       id
     }
   }
-`
+`;

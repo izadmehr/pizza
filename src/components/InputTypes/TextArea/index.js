@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Label from '../Label'
-import ErrorText from '../ErrorText'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
+import Label from "../Label";
+import ErrorText from "../ErrorText";
 
 export const StyledTextArea = styled.textarea`
   padding: 10px 10px;
@@ -12,7 +12,7 @@ export const StyledTextArea = styled.textarea`
   width: 400px;
   height: 200px;
   background-color: transparent;
-`
+`;
 
 const TextArea = ({
   id,
@@ -22,7 +22,7 @@ const TextArea = ({
   errors,
   placeholder,
   handleChange,
-  handleBlur,
+  handleBlur
 }) => (
   <Label htmlFor={id}>
     {label}
@@ -36,13 +36,13 @@ const TextArea = ({
     />
     {errors[id] && touched[id] && <ErrorText>{errors[id]}</ErrorText>}
   </Label>
-)
+);
 
 TextArea.defaultProps = {
-  placeholder: '',
-  label: '',
-  id: '',
-}
+  placeholder: "",
+  label: "",
+  id: ""
+};
 
 TextArea.propTypes = {
   id: PropTypes.string,
@@ -52,7 +52,7 @@ TextArea.propTypes = {
   touched: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
-}
+  handleBlur: PropTypes.func.isRequired
+};
 
-export default TextArea
+export default TextArea;

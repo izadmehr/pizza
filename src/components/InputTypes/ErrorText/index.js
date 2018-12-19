@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 const ErrorText = styled.span`
   display: inline-block;
@@ -8,6 +7,6 @@ const ErrorText = styled.span`
   margin-top: 10px;
   padding: 10px;
   font-size: 12px;
-`
+`;
 
-export default ErrorText
+export default ErrorText;

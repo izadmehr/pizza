@@ -1,7 +1,7 @@
-import React from 'react'
-import { H2, P } from 'components/Typography'
-import { Link } from 'components'
+import React from "react";
 
+import { H2, P } from "components/Typography";
+import { Link } from "components";
 
 const NotFoundPage = () => (
   <section>
@@ -10,6 +10,6 @@ const NotFoundPage = () => (
       Please go back <Link to="/">home</Link>
     </P>
   </section>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

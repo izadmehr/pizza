@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withFormik } from 'formik'
-import * as Yup from 'yup'
-import { Input, TextArea } from 'components/InputTypes'
-import { Button } from 'components'
+import React from "react";
+import PropTypes from "prop-types";
+import { withFormik } from "formik";
+import * as Yup from "yup";
 
+import { Input, TextArea } from "components/InputTypes";
+import { Button } from "components";
 
 const PostForm = ({
   values,
@@ -12,7 +12,7 @@ const PostForm = ({
   errors,
   handleChange,
   handleBlur,
-  handleSubmit,
+  handleSubmit
 }) => (
   <form onSubmit={handleSubmit}>
     <Input
@@ -37,7 +37,7 @@ const PostForm = ({
     />
     <Button type="submit">Submit</Button>
   </form>
-)
+);
 
 PostForm.propTypes = {
   values: PropTypes.object.isRequired,
@@ -45,27 +45,27 @@ PostForm.propTypes = {
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-}
+  handleSubmit: PropTypes.func.isRequired
+};
 
 const EnhancedForm = withFormik({
   mapPropsToValues: props => {
     if (!props.initialValues) {
-      return { title: '', text: '' }
+      return { title: "", text: "" };
     }
-    return { title: props.initialValues.title, text: props.initialValues.text }
+    return { title: props.initialValues.title, text: props.initialValues.text };
   },
   validationSchema: Yup.object().shape({
-    title: Yup.string().required('Title is required'),
-    text: Yup.string().required('Text is required'),
+    title: Yup.string().required("Title is required"),
+    text: Yup.string().required("Text is required")
   }),
   handleSubmit: (values, other) => {
     other.props.submit({
       ...values,
-      id: other.props.initialValues && other.props.initialValues.id,
-    })
+      id: other.props.initialValues && other.props.initialValues.id
+    });
   },
-  displayName: 'PostForm',
-})(PostForm)
+  displayName: "PostForm"
+})(PostForm);
 
-export default EnhancedForm
+export default EnhancedForm;

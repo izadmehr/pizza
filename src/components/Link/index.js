@@ -1,16 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link as RouterLink } from 'react-router-dom'
-
+import React from "react";
+import PropTypes from "prop-types";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Link = ({ children, ...rest }) => (
-  <RouterLink {...rest}>
-    {children}
-  </RouterLink>
-)
+  <RouterLink {...rest}>{children}</RouterLink>
+);
 
 Link.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Link
+export default Link;

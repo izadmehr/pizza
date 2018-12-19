@@ -1,27 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 export const getButtonColor = ({ bgType, theme: { color } }) => {
   switch (bgType) {
-    case 'success':
+    case "success":
       return {
         background: color.lightGreen,
-        hover: color.darkGreen,
-      }
-    case 'error':
+        hover: color.darkGreen
+      };
+    case "error":
       return {
         background: color.lightRed,
-        hover: color.darkRed,
-      }
+        hover: color.darkRed
+      };
     default:
       return {
         background: color.lightGrey,
-        hover: color.darkGrey,
-      }
+        hover: color.darkGrey
+      };
   }
-}
+};
 
 export const StyledButton = styled.button`
   background-color: ${props => getButtonColor(props).background};
@@ -35,33 +34,34 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition: background-color 150ms linear;
   margin-right: 2px;
-  
+
   &:hover {
     background-color: ${props => getButtonColor(props).hover};
   }
-  
+
   &:focus {
     outline: 0;
   }
-  
+
   &:active {
-    background-color: ${({ bgType, theme: { color } }) => bgType ? color.lightGrey : color.primary};
+    background-color: ${({ bgType, theme: { color } }) =>
+      bgType ? color.lightGrey : color.primary};
   }
-`
+`;
 
 const Button = ({ bgType, children, ...rest }) => (
   <StyledButton bgType={bgType} {...rest}>
     {children}
   </StyledButton>
-)
+);
 
 Button.defaultProps = {
-  bgType: null,
-}
+  bgType: null
+};
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  bgType: PropTypes.oneOf(['success', 'error']),
-}
+  bgType: PropTypes.oneOf(["success", "error"])
+};
 
-export default Button
+export default Button;

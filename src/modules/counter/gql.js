@@ -1,11 +1,10 @@
-import gql from 'graphql-tag'
-
+import gql from "graphql-tag";
 
 export const COUNTER_VALUE = gql`
   query {
     counterValue @client
   }
-`
+`;
 
 export const INCREMENT_COUNTER = gql`
   mutation {

@@ -1,38 +1,38 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import TextArea from '../index'
+import React from "react";
+import { shallow } from "enzyme";
 
+import TextArea from "../index";
 
-describe('Input Component', () => {
+describe("Input Component", () => {
   const fakeProps = {
-    id: 'fakeId',
+    id: "fakeId",
     values: {
-      fakeId: 'fakeValue',
+      fakeId: "fakeValue"
     },
-    placeholder: 'fake placeholder',
+    placeholder: "fake placeholder",
     handleChange: () => ({}),
-    handleBlur: () => ({}),
-  }
+    handleBlur: () => ({})
+  };
 
-  it('renders with all props', () => {
+  it("renders with all props", () => {
     const wrapper = shallow(
       <TextArea
         touched={{
-          fakeId: true,
+          fakeId: true
         }}
         errors={{
-          fakeId: 'fake error message',
+          fakeId: "fake error message"
         }}
         {...fakeProps}
-      />,
-    )
-    expect(wrapper).toMatchSnapshot()
-  })
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 
-  it('renders without error message', () => {
+  it("renders without error message", () => {
     const wrapper = shallow(
-      <TextArea errors={{}} touched={{}} {...fakeProps} />,
-    )
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+      <TextArea errors={{}} touched={{}} {...fakeProps} />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+});

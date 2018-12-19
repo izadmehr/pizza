@@ -1,21 +1,19 @@
 module.exports = {
-  'modulePaths': ['__tests__', '__mocks__', 'src'],
-  testEnvironment: 'node',
+  modulePaths: ["__tests__", "__mocks__", "src"],
+  testEnvironment: "node",
   testPathIgnorePatterns: [
-    '/assets',
-    '/dist',
-    '/node_modules',
-    '/release-builds',
+    "/assets",
+    "/dist",
+    "/node_modules",
+    "/release-builds"
   ],
   modulePathIgnorePatterns: [
-    '/assets',
-    '/dist',
-    '/node_modules',
-    '/release-builds',
+    "/assets",
+    "/dist",
+    "/node_modules",
+    "/release-builds"
   ],
-  setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',
+  setupTestFrameworkScriptFile: "<rootDir>/jest.setup.js",
   verbose: true,
-  snapshotSerializers: [
-    'enzyme-to-json/serializer',
-  ],
-}
+  snapshotSerializers: ["enzyme-to-json/serializer"]
+};
