@@ -16,8 +16,8 @@ export const getButtonColor = ({ bgType, theme: { color } }) => {
       };
     default:
       return {
-        background: color.lightGrey,
-        hover: color.darkGrey
+        background: color.primary,
+        hover: color.secondary
       };
   }
 };

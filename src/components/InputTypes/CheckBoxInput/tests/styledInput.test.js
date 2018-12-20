@@ -3,13 +3,13 @@ import { mount } from "enzyme";
 
 import { theme } from "styles";
 
-import { StyledInput } from "../index";
 import "jsdom-global/register";
 import "jest-styled-components";
+import { TextInput } from "../styled";
 
 describe("StyledInput Component", () => {
   it("has correct default styles", () => {
-    const wrapper = mount(<StyledInput theme={theme} />);
+    const wrapper = mount(<TextInput theme={theme} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

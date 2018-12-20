@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const Label = styled.label`
-  display: block;
+  display: flex;
+  align-items: center;
   font-weight: bolder;
   padding: 0;
-  margin-bottom: 20px;
 
   input,
   textarea {
-    display: block;
+    margin-right: 0.5rem;
   }
 `;
 

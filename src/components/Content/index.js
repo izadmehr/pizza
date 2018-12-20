@@ -7,7 +7,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-top: 10px;
+  margin: 10px auto;
 
   ${mediaQueries.md} {
     padding: 25px 25px;

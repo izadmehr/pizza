@@ -15,7 +15,7 @@ export const QueryWrapper = ({ children, ...rest }) => (
       if (error) {
         return <Message type="error" text={`Error! ${error.message}`} />;
       }
-
+      console.log("data: ", data);
       return children({ loading, error, data });
     }}
   </Query>

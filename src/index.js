@@ -9,7 +9,9 @@ import { Provider } from "react-redux";
 import routes from "./routes";
 import client from "./apolloClient";
 import createGlobalStyles, { theme } from "./styles";
+import configureStore from "./redux/store/configureStore";
 
+const store = configureStore();
 const GlobalStyle = createGlobalStyles();
 
 const render = () => {

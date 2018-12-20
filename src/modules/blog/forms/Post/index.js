@@ -2,9 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withFormik } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { uniqueId } from "lodash";
 
-import { Input, TextArea } from "components/InputTypes";
+import { CheckBoxInput } from "components/InputTypes";
 import { Button } from "components";
+
+import { H3 } from "../../../../components/Typography";
+import DataRow from "./DataRow";
+import TappingLengthInput from "../../../../components/InputTypes/TappingLengthInput";
+import { addToCart } from "../../../../redux/modules/cart";
+
+const Toppings = styled(H3)`
+  margin-top: 1rem;
+`;
+
+const TappingContainer = styled.div`
+  margin-top: 0.5rem;
+`;
 
 const PostForm = ({
   values,
@@ -12,30 +28,56 @@ const PostForm = ({
   errors,
   handleChange,
   handleBlur,
-  handleSubmit
+  handleSubmit,
+  selectedItem
 }) => (
   <form onSubmit={handleSubmit}>
-    <Input
-      id="title"
-      label="Title"
-      placeholder="New Post Title"
-      values={values}
-      touched={touched}
-      errors={errors}
-      handleChange={handleChange}
-      handleBlur={handleBlur}
+    <DataRow label="Base Price" value={selectedItem.basePrice} />
+    <DataRow
+      label="Max Toppings"
+      value={selectedItem.maxToppings || "Unlimited Toppings!"}
     />
-    <TextArea
-      id="text"
-      label="Text"
-      placeholder="New Post Text"
-      values={values}
-      touched={touched}
-      errors={errors}
-      handleChange={handleChange}
-      handleBlur={handleBlur}
+    <Toppings>Toppings:</Toppings>
+    {selectedItem.toppings.map(({ defaultSelected, topping }, index) => (
+      <TappingContainer key={index}>
+        <CheckBoxInput
+          id={topping.name}
+          label={`${topping.name}: $${topping.price}`}
+          value={values[topping.name] || defaultSelected}
+          touched={touched[topping.name]}
+          error={errors[topping.name]}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          defaultSelected={defaultSelected}
+        />
+        {selectedItem.maxToppings === null && (
+          <TappingLengthInput
+            id={`${topping.name}-length`}
+            label="Number of topping:"
+            value={values[`${topping.name}-length`]}
+            touched={touched[`${topping.name}-length`]}
+            error={errors[`${topping.name}-length`]}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+          />
+        )}
+      </TappingContainer>
+    ))}
+    <DataRow
+      label="Total Price"
+      value={selectedItem.toppings.reduce(
+        (accumulator, { defaultSelected, topping }) =>
+          accumulator +
+          (values[topping.name] || defaultSelected
+            ? topping.price * (values[`${topping.name}-length`] || 1)
+            : 0),
+        selectedItem.basePrice
+      )}
     />
-    <Button type="submit">Submit</Button>
+
+    <Button type="submit" style={{ marginTop: "1rem" }}>
+      Add To Cart
+    </Button>
   </form>
 );
 
@@ -45,27 +87,47 @@ PostForm.propTypes = {
   errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  selectedItem: PropTypes.object.isRequired
 };
 
 const EnhancedForm = withFormik({
   mapPropsToValues: props => {
     if (!props.initialValues) {
-      return { title: "", text: "" };
+      return {};
     }
     return { title: props.initialValues.title, text: props.initialValues.text };
   },
-  validationSchema: Yup.object().shape({
-    title: Yup.string().required("Title is required"),
-    text: Yup.string().required("Text is required")
+  validationSchema: Yup.lazy(value => {
+    const tappingInputs = Object.keys(value)
+      .filter(key => key.endsWith("-length"))
+      .reduce(
+        (o, key) => ({
+          ...o,
+          [key]: Yup.number()
+            .typeError("Number of topping should be a number.")
+            .integer()
+            .positive("Number of topping should be more than zero.")
+        }),
+        {}
+      );
+    return Yup.object().shape(tappingInputs);
   }),
   handleSubmit: (values, other) => {
-    other.props.submit({
+    const id = other.props.initialValues
+      ? other.props.initialValues.id
+      : uniqueId();
+    other.props.addToCart({
       ...values,
-      id: other.props.initialValues && other.props.initialValues.id
+      id
     });
   },
   displayName: "PostForm"
 })(PostForm);
 
-export default EnhancedForm;
+export default connect(
+  null,
+  {
+    addToCart
+  }
+)(EnhancedForm);

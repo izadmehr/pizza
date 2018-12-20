@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { renderRoutes } from "react-router-config";
 
 import { Content, Navbar } from "components";
+import Cart from "components/icons/Cart/Cart-icon";
 
 const NAV_LINKS = [
-  { id: 1, to: "/", label: "home" },
-  { id: 2, to: "/counter", label: "counter" },
-  { id: 3, to: "/posts", label: "blog" }
+  { id: 1, to: "/pizza", label: "Create Pizza" },
+  { id: 2, to: "/cart", label: <Cart /> }
 ];
 
 const Container = styled.div`

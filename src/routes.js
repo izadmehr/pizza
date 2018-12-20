@@ -2,6 +2,7 @@ import Home from "pages/Home";
 import Counter from "pages/Counter";
 import NotFound from "pages/NotFound";
 import { ListPosts, PostCreate, PostDetail, PostEdit } from "pages/Blog";
+import { PizzaCreate } from "pages/Pizza-page";
 
 import App from "./app";
 
@@ -33,6 +34,10 @@ export default [
       {
         path: "/posts",
         component: ListPosts
+      },
+      {
+        path: "/pizza",
+        component: PizzaCreate
       },
       {
         path: "*",
