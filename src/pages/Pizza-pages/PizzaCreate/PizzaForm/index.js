@@ -75,21 +75,23 @@ export const PizzaForm = ({
             value={selectedItem.maxToppings || "Unlimited Toppings!"}
           />
           <Toppings>Toppings:</Toppings>
-          {selectedItem.toppings.map(({ defaultSelected, topping }, index) => (
-            <TappingContainer key={index}>
-              <CheckBoxInput
-                type="checkbox"
-                id={topping.name}
-                label={`${topping.name}: $${topping.price}`}
-                value={values[topping.name] || defaultSelected}
-                touched={touched[topping.name]}
-                error={errors[topping.name]}
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-              />
-              {selectedItem.maxToppings === null &&
-                (values[topping.name] ||
-                  (defaultSelected && values[topping.name] !== false)) && (
+          {selectedItem.toppings.map(({ defaultSelected, topping }, index) => {
+            const toppingSelected =
+              values[topping.name] ||
+              (defaultSelected && values[topping.name] !== false);
+            return (
+              <TappingContainer key={index}>
+                <CheckBoxInput
+                  type="checkbox"
+                  id={topping.name}
+                  label={`${topping.name}: $${topping.price}`}
+                  value={toppingSelected}
+                  touched={touched[topping.name]}
+                  error={errors[topping.name]}
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                />
+                {selectedItem.maxToppings === null && toppingSelected && (
                   <TappingLengthInput
                     id={`${topping.name}-length`}
                     label="Number of topping:"
@@ -100,8 +102,9 @@ export const PizzaForm = ({
                     handleBlur={handleBlur}
                   />
                 )}
-            </TappingContainer>
-          ))}
+              </TappingContainer>
+            );
+          })}
           <DataRow label="Total Price" value={pizzaPrice(pizzaSizes, values)} />
 
           <Button type="submit" style={{ marginTop: "1rem", float: "right" }}>
