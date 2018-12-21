@@ -1,8 +1,7 @@
 import NotFound from "pages/NotFound";
-import { PizzaCreate, CartPage } from "pages/Pizza-page";
+import { PizzaCreate, CartPage } from "pages/Pizza-pages";
 
 import App from "./app";
-import { PostDetail } from "./pages/Blog";
 
 export default [
   {

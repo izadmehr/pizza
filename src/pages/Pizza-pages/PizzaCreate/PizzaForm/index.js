@@ -5,13 +5,12 @@ import * as Yup from "yup";
 import { connect } from "react-redux";
 import { uniqueId } from "lodash";
 
-import { CheckBoxInput } from "components/InputTypes";
+import { TappingLengthInput, CheckBoxInput } from "components/InputTypes";
 import { Button } from "components";
-import TappingLengthInput from "components/InputTypes/TappingLengthInput";
 import { P } from "components/Typography";
 
 import DataRow from "./DataRow";
-import { addToCart } from "../../../../redux/modules/cart";
+import { upsertToCart } from "../../../../redux/modules/cart";
 import { PizzaSizesContainer, TappingContainer, Toppings } from "./styles";
 
 function selectedPizzaSize(pizzaSizes, values) {
@@ -88,17 +87,19 @@ const PostForm = ({
                 handleChange={handleChange}
                 handleBlur={handleBlur}
               />
-              {selectedItem.maxToppings === null && (
-                <TappingLengthInput
-                  id={`${topping.name}-length`}
-                  label="Number of topping:"
-                  value={values[`${topping.name}-length`]}
-                  touched={touched[`${topping.name}-length`]}
-                  error={errors[`${topping.name}-length`]}
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                />
-              )}
+              {selectedItem.maxToppings === null &&
+                (values[topping.name] ||
+                  (defaultSelected && values[topping.name] !== false)) && (
+                  <TappingLengthInput
+                    id={`${topping.name}-length`}
+                    label="Number of topping:"
+                    value={values[`${topping.name}-length`]}
+                    touched={touched[`${topping.name}-length`]}
+                    error={errors[`${topping.name}-length`]}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  />
+                )}
             </TappingContainer>
           ))}
           <DataRow label="Total Price" value={pizzaPrice(pizzaSizes, values)} />
@@ -178,7 +179,7 @@ const EnhancedForm = withFormik({
   }),
   handleSubmit: (values, { props }) => {
     const id = props.selectedPizza ? props.selectedPizza.id : uniqueId();
-    props.addToCart({
+    props.upsertToCart({
       values,
       name: values.pizzaSize,
       pizzaPrice: pizzaPrice(props.pizzaSizes, values),
@@ -208,6 +209,6 @@ const mapStateToProps = ({ cart }, { pizzaId }) => ({
 export default connect(
   mapStateToProps,
   {
-    addToCart
+    upsertToCart
   }
 )(EnhancedForm);

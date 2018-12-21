@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Query } from "components";
-import PostForm from "modules/blog/forms/Post";
-import { ALL_PIZZAS } from "modules/blog/gql";
+import { ALL_PIZZAS } from "modules/gql";
+
+import PizzaForm from "./PizzaForm";
 
 const PostCreatePage = ({
   history: { push },
@@ -14,7 +15,7 @@ const PostCreatePage = ({
   <section>
     <Query query={ALL_PIZZAS}>
       {({ data: { pizzaSizes } }) => (
-        <PostForm
+        <PizzaForm
           pizzaId={pizzaId}
           pizzaSizes={pizzaSizes}
           pushtoCartPage={() => push(`/cart`)}
@@ -25,6 +26,9 @@ const PostCreatePage = ({
 );
 
 PostCreatePage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({ pizzaId: PropTypes.string })
   }).isRequired

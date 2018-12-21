@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
 
 export const numberOfPizzas = state => Object.keys(state).length;
 
-export function addToCart(newPizza) {
+export function upsertToCart(newPizza) {
   return {
     type: ADD_TO_CART,
     newPizza
