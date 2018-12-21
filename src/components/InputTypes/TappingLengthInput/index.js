@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import ErrorText from "../ErrorText";
-import { TextInput, Label } from "./styled";
+import { TextInput, Label } from "./styles";
 
 const TappingLengthInput = ({
   id,

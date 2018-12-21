@@ -5,7 +5,7 @@ import { theme } from "styles";
 
 import "jsdom-global/register";
 import "jest-styled-components";
-import { TextInput } from "../styled";
+import { TextInput } from "../styles";
 
 describe("StyledInput Component", () => {
   it("has correct default styles", () => {

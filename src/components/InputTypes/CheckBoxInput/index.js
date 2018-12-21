@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Label from "../Label";
 import ErrorText from "../ErrorText";
-import { TextInput } from "./styled";
+import { TextInput } from "./styles";
 
 const CheckBoxInput = ({
   id,
