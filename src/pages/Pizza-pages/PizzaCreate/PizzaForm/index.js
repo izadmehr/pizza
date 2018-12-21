@@ -39,12 +39,26 @@ export const PizzaForm = ({
   handleChange,
   handleBlur,
   handleSubmit,
+  resetForm,
   pizzaSizes,
   selectedPizza
 }) => {
   const selectedItem = pizzaSizes.filter(
     ({ name: pizzaSize }) => values.pizzaSize === pizzaSize
   )[0];
+
+  const numberOfSelectedTopping =
+    selectedItem &&
+    selectedItem.toppings.reduce((o, { topping, defaultSelected }) => {
+      if (
+        values[topping.name] ||
+        (defaultSelected && values[topping.name] !== false)
+      ) {
+        return o + 1;
+      }
+      return o;
+    }, 0);
+
   return (
     <form onSubmit={handleSubmit}>
       <PizzaSizesContainer>
@@ -59,10 +73,7 @@ export const PizzaForm = ({
             value={values.pizzaSize === pizzaSizeName}
             touched={touched[pizzaSizeName]}
             error={errors[pizzaSizeName]}
-            handleChange={e => {
-              e.target.value = pizzaSizeName;
-              handleChange(e);
-            }}
+            handleChange={() => resetForm({ pizzaSize: pizzaSizeName })}
             handleBlur={handleBlur}
           />
         ))}
@@ -79,6 +90,7 @@ export const PizzaForm = ({
             const toppingSelected =
               values[topping.name] ||
               (defaultSelected && values[topping.name] !== false);
+
             return (
               <TappingContainer key={index}>
                 <CheckBoxInput
@@ -90,6 +102,11 @@ export const PizzaForm = ({
                   error={errors[topping.name]}
                   handleChange={handleChange}
                   handleBlur={handleBlur}
+                  disabled={
+                    selectedItem.maxToppings &&
+                    !toppingSelected &&
+                    numberOfSelectedTopping === selectedItem.maxToppings
+                  }
                 />
                 {selectedItem.maxToppings === null && toppingSelected && (
                   <TappingLengthInput

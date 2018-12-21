@@ -10,6 +10,7 @@ const CheckBoxInput = ({
   label,
   name,
   value,
+  disabled,
   touched,
   error,
   type,
@@ -22,6 +23,7 @@ const CheckBoxInput = ({
       id={id}
       name={name || id}
       checked={!!value}
+      disabled={disabled}
       type={type}
       placeholder={placeholder}
       onChange={handleChange}
@@ -38,6 +40,7 @@ CheckBoxInput.defaultProps = {
   id: "",
   name: "",
   touched: false,
+  disabled: false,
   error: "",
   value: false,
   type: "checkbox"
@@ -50,6 +53,7 @@ CheckBoxInput.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.bool,
+  disabled: PropTypes.bool,
   touched: PropTypes.bool,
   error: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
