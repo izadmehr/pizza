@@ -69,7 +69,7 @@ export const PizzaForm = ({
       </PizzaSizesContainer>
       {selectedItem && (
         <Fragment>
-          <DataRow label="Base Price" value={selectedItem.basePrice} />
+          <DataRow label="Base Price" value={`$${selectedItem.basePrice}`} />
           <DataRow
             label="Max Toppings"
             value={selectedItem.maxToppings || "Unlimited Toppings!"}
@@ -105,7 +105,10 @@ export const PizzaForm = ({
               </TappingContainer>
             );
           })}
-          <DataRow label="Total Price" value={pizzaPrice(pizzaSizes, values)} />
+          <DataRow
+            label="Total Price"
+            value={`$${pizzaPrice(pizzaSizes, values)}`}
+          />
 
           <Button type="submit" style={{ marginTop: "1rem", float: "right" }}>
             {selectedPizza ? "Update the pizza" : "Add To Cart"}

@@ -36,7 +36,7 @@ export const CartPage = ({ cart, noPizza, removeFromCart }) => (
           </H2>
           <P>
             <b>Pizza Price: </b>
-            {pizza.pizzaPrice}
+            ${pizza.pizzaPrice}
           </P>
           <P>
             <b>Toppings: </b>
