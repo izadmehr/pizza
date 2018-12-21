@@ -1,9 +1,9 @@
 {
-  "name": "React-Apollo-GraphQl",
-  "version": "3.0.0",
+  "name": "pizza_app",
+  "version": "1.0.0",
   "author": {
-    "name": "Michal Jarnot",
-    "email": "m.jarnot@yahoo.com"
+    "name": "Meysam Izadmehr",
+    "email": "meysam.s@gmail.com"
   },
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,6 @@
     "apollo-client": "2.4.5",
     "apollo-link-http": "1.5.8",
     "compression": "1.7.3",
-    "downshift": "^3.1.7",
     "express": "4.16.4",
     "formik": "1.4.0",
     "graphql": "14.0.2",
@@ -108,10 +107,6 @@
     "yup",
     "jest",
     "enzyme",
-    "sinon",
-    "prisma",
-    "graphcool",
-    "cool",
-    "docker"
+    "sinon"
   ]
 }
