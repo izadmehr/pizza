@@ -7,3 +7,4 @@ export { default as Mutation } from "./Mutation";
 export { default as Navbar } from "./Navbar";
 export { default as Query } from "./Query";
 export { default as Spinner } from "./Spinner";
+export { default as CartButton } from "./CartButton";

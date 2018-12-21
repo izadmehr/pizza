@@ -67,7 +67,7 @@ export const H3 = styled.h3`
 
 export const P = styled.p`
   font-weight: lighter;
-  margin: 0 0 25px 0;
+  margin: 0;
   font-size: 16px;
   line-height: 1.5;
 

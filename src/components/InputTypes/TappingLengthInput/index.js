@@ -20,12 +20,10 @@ const TappingLengthInput = ({
       <TextInput
         id={id}
         name={id}
-        checked={value}
-        // type="number"
+        value={value}
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
-        min={1}
       />
     </Label>
     {error && touched && <ErrorText>{error}</ErrorText>}

@@ -12,6 +12,7 @@ const Content = styled.div`
   ${mediaQueries.md} {
     padding: 25px 25px;
     max-width: ${props => props.theme.layout.maxWidth};
+    min-width: ${props => props.theme.layout.minWidth};
   }
 `;
 

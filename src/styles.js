@@ -2,7 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 export const theme = {
   layout: {
-    maxWidth: `${1000 / 16}rem`
+    maxWidth: `${1000 / 16}rem`,
+    minWidth: "25rem"
   },
   color: {
     primary: "#5d9cec",

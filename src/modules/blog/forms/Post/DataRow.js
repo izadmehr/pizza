@@ -17,7 +17,7 @@ const Title = styled.p`
 const DataRow = ({ label, value }) => (
   <RowContainer>
     <Label>{`${label}: `}</Label>
-    <Title>{parseFloat(value).toFixed(2)}</Title>
+    <Title>{value}</Title>
   </RowContainer>
 );
 

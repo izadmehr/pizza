@@ -96,7 +96,8 @@ Navbar.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       to: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+        .isRequired
     })
   ).isRequired
 };

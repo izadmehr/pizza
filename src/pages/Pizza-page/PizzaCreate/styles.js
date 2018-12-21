@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PizzaSizeSelector = styled.div`
+export const PizzaSizeSelectorContainer = styled.div`
   padding: 0 1rem;
   display: flex;
   position: relative;

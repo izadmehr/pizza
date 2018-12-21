@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { renderRoutes } from "react-router-config";
 
-import { Content, Navbar } from "components";
-import Cart from "components/icons/Cart/Cart-icon";
+import { Content, Navbar, CartButton } from "components";
 
 const NAV_LINKS = [
   { id: 1, to: "/pizza", label: "Create Pizza" },
-  { id: 2, to: "/cart", label: <Cart /> }
+  { id: 2, to: "/cart", label: <CartButton /> }
 ];
 
 const Container = styled.div`

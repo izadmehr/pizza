@@ -8,9 +8,11 @@ import { TextInput } from "./styled";
 const CheckBoxInput = ({
   id,
   label,
+  name,
   value,
   touched,
   error,
+  type,
   placeholder,
   handleChange,
   handleBlur
@@ -18,9 +20,9 @@ const CheckBoxInput = ({
   <Label htmlFor={id}>
     <TextInput
       id={id}
-      name={id}
-      checked={value}
-      type="checkbox"
+      name={name || id}
+      checked={!!value}
+      type={type}
       placeholder={placeholder}
       onChange={handleChange}
       onBlur={handleBlur}
@@ -34,15 +36,20 @@ CheckBoxInput.defaultProps = {
   placeholder: "",
   label: "",
   id: "",
+  name: "",
   touched: false,
   error: "",
+  value: false,
+  type: "checkbox"
 };
 
 CheckBoxInput.propTypes = {
   id: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  value: PropTypes.bool.isRequired,
+  value: PropTypes.bool,
   touched: PropTypes.bool,
   error: PropTypes.string,
   handleChange: PropTypes.func.isRequired,

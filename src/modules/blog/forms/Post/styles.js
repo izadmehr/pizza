@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { H3 } from "../../../../components/Typography";
+
 export const PizzaSizeSelector = styled.div`
   padding: 0 1rem;
   display: flex;
@@ -30,4 +32,17 @@ export const ResultItem = styled.li`
   background: ${({ highlighted }) =>
     highlighted ? "rgba(0,0,0,.03)" : "white"};
   font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
+`;
+
+export const PizzaSizesContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Toppings = styled(H3)`
+  margin-top: 1rem;
+`;
+
+export const TappingContainer = styled.div`
+  margin-top: 0.5rem;
 `;
