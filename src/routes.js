@@ -8,6 +8,11 @@ export default [
     component: App,
     routes: [
       {
+        path: "/",
+        exact: true,
+        component: PizzaCreate
+      },
+      {
         path: "/pizza/:pizzaId?",
         component: PizzaCreate
       },
