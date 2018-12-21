@@ -10,7 +10,6 @@ const vendors = [
   "apollo-client",
   "apollo-link",
   "apollo-link-http",
-  "apollo-link-state",
   "formik",
   "graphql",
   "graphql-tag",
