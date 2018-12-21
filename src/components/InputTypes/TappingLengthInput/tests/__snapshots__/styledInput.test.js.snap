@@ -2,9 +2,54 @@
 
 exports[`StyledInput Component has correct default styles 1`] = `
 .c0 {
-  padding: 10px 10px;
-  border: 1px solid #ccd1d9;
-  margin-top: 10px;
+  border: solid 1px #ccd1d9;
+  font-size: 1rem;
+  padding: 0 5px;
+  background-color: transparent;
+  caret-color: #5d9cec;
+}
+
+.c0::-ms-clear {
+  display: none;
+}
+
+.c0::-webkit-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f7f7f;
+  font-family: Barlow,sans-serif;
+}
+
+.c0::-webkit-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f7f7f;
+  font-family: Barlow,sans-serif;
+}
+
+.c0::-moz-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f7f7f;
+  font-family: Barlow,sans-serif;
+}
+
+.c0:-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f7f7f;
+  font-family: Barlow,sans-serif;
+}
+
+.c0::placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f7f7f;
+  font-family: Barlow,sans-serif;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 <styled.input
@@ -24,6 +69,7 @@ exports[`StyledInput Component has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -34,22 +80,47 @@ exports[`StyledInput Component has correct default styles 1`] = `
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-htpNat",
+          "componentId": "sc-bwzfXH",
           "isStatic": false,
           "lastClassName": "c0",
           "rules": Array [
             "
-  padding: 10px 10px;
-  border: 1px solid ",
+  border: solid 1px ",
             [Function],
             ";
-  margin-top: 10px;
+  font-size: 1rem;
+  padding: 0 5px;
+  background-color: transparent;
+  caret-color: ",
+            [Function],
+            ";
+
+  ::-ms-clear {
+    display: none;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-family: Barlow, sans-serif;
+  }
+
+  ::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-family: Barlow, sans-serif;
+  }
+  :focus {
+    outline: none;
+  }
 ",
           ],
         },
         "displayName": "styled.input",
         "render": [Function],
-        "styledComponentId": "sc-htpNat",
+        "styledComponentId": "sc-bwzfXH",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],
@@ -73,6 +144,7 @@ exports[`StyledInput Component has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }

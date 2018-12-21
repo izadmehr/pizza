@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import { map } from "lodash";
 
 import { H1, H2, P } from "components/Typography";
@@ -66,10 +66,17 @@ export const CartPage = ({ cart, noPizza, removeFromCart }) => (
   </section>
 );
 CartPage.propTypes = {
-  cart: PropTypes.object.isRequired,
-  noPizza: PropTypes.bool.isRequired,
-  removeFromCart: PropTypes.func.isRequired
+  cart: PropTypes.object,
+  noPizza: PropTypes.bool,
+  removeFromCart: PropTypes.func
 };
+
+CartPage.defaultProps = {
+  cart: {},
+  noPizza: true,
+  removeFromCart: () => {}
+};
+
 const mapStateToProps = ({ cart }) => ({
   cart,
   noPizza: numberOfPizzas(cart) === 0

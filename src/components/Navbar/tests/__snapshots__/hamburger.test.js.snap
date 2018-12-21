@@ -53,6 +53,7 @@ exports[`Hamburger Components Hamburger has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -76,24 +77,24 @@ exports[`Hamburger Components Hamburger has correct default styles 1`] = `
   transition: 0.25s ease;
   cursor: pointer;
   display: block;
-  
+
   span:nth-child(1) {
     top: 0;
   }
-  
+
   span:nth-child(2),
   span:nth-child(3) {
     top: 0.6rem;
   }
-  
+
   span:nth-child(4) {
     top: 1.2rem;
   }
-  
+
   ",
             [Function],
             ";
-  
+
   ",
             "@media (min-width: 62.5rem)",
             " {
@@ -128,6 +129,7 @@ exports[`Hamburger Components Hamburger has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -217,6 +219,7 @@ exports[`Hamburger Components Hamburger has correct default styles when open 1`]
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -240,24 +243,24 @@ exports[`Hamburger Components Hamburger has correct default styles when open 1`]
   transition: 0.25s ease;
   cursor: pointer;
   display: block;
-  
+
   span:nth-child(1) {
     top: 0;
   }
-  
+
   span:nth-child(2),
   span:nth-child(3) {
     top: 0.6rem;
   }
-  
+
   span:nth-child(4) {
     top: 1.2rem;
   }
-  
+
   ",
             [Function],
             ";
-  
+
   ",
             "@media (min-width: 62.5rem)",
             " {
@@ -293,6 +296,7 @@ exports[`Hamburger Components Hamburger has correct default styles when open 1`]
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -364,6 +368,7 @@ exports[`Hamburger Components HamburgerLine has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -391,7 +396,7 @@ exports[`Hamburger Components HamburgerLine has correct default styles 1`] = `
   background: ",
             [Function],
             ";
-  
+
   ",
             "@media (min-width: 48rem)",
             " {
@@ -428,6 +433,7 @@ exports[`Hamburger Components HamburgerLine has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }

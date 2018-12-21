@@ -37,6 +37,7 @@ exports[`Typography Components A has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -98,6 +99,7 @@ exports[`Typography Components A has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -152,6 +154,7 @@ exports[`Typography Components H1 has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -168,23 +171,23 @@ exports[`Typography Components H1 has correct default styles 1`] = `
           "rules": Array [
             "
   font-weight: 500;
-  margin: 0 0 24px  0;
+  margin: 0 0 24px 0;
   font-size: 21px;
   line-height: 24px;
-  
+
   &::selection {
     background: ",
             [Function],
             ";
   }
-    
+
   ",
             "@media (min-width: 34.375rem)",
             " {
     font-size: 24px;
     line-height: 36px;
   }
-  
+
   ",
             "@media (min-width: 48rem)",
             " {
@@ -220,6 +223,7 @@ exports[`Typography Components H1 has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -274,6 +278,7 @@ exports[`Typography Components H2 has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -290,23 +295,23 @@ exports[`Typography Components H2 has correct default styles 1`] = `
           "rules": Array [
             "
   font-weight: 500;
-  margin: 0 0 24px  0;
+  margin: 0 0 24px 0;
   font-size: 18px;
   line-height: 24px;
-  
+
   &::selection {
     background: ",
             [Function],
             ";
   }
-  
+
   ",
             "@media (min-width: 34.375rem)",
             " {
     font-size: 21px;
     line-height: 36px;
   }
-  
+
   ",
             "@media (min-width: 48rem)",
             " {
@@ -342,6 +347,7 @@ exports[`Typography Components H2 has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -396,6 +402,7 @@ exports[`Typography Components H3 has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -412,23 +419,23 @@ exports[`Typography Components H3 has correct default styles 1`] = `
           "rules": Array [
             "
   font-weight: 500;
-  margin: 0 0 24px  0;
+  margin: 0 0 24px 0;
   font-size: 16px;
   line-height: 24px;
-  
+
   &::selection {
     background: ",
             [Function],
             ";
   }
-  
+
   ",
             "@media (min-width: 34.375rem)",
             " {
     font-size: 18px;
     line-height: 36px;
   }
-  
+
   ",
             "@media (min-width: 48rem)",
             " {
@@ -464,6 +471,7 @@ exports[`Typography Components H3 has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -505,6 +513,7 @@ exports[`Typography Components HR has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -558,6 +567,7 @@ exports[`Typography Components HR has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -572,7 +582,7 @@ exports[`Typography Components HR has correct default styles 1`] = `
 exports[`Typography Components P has correct default styles 1`] = `
 .c0 {
   font-weight: lighter;
-  margin: 0 0 25px 0;
+  margin: 0;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -598,6 +608,7 @@ exports[`Typography Components P has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -614,10 +625,10 @@ exports[`Typography Components P has correct default styles 1`] = `
           "rules": Array [
             "
   font-weight: lighter;
-  margin: 0 0 25px 0;
+  margin: 0;
   font-size: 16px;
   line-height: 1.5;
-  
+
   &::selection {
     background: ",
             [Function],
@@ -652,6 +663,7 @@ exports[`Typography Components P has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }

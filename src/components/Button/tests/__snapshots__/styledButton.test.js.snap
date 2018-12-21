@@ -47,6 +47,7 @@ exports[`StyledButton Component has correct :active background-color for bgType 
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -76,17 +77,17 @@ exports[`StyledButton Component has correct :active background-color for bgType 
   cursor: pointer;
   transition: background-color 150ms linear;
   margin-right: 2px;
-  
+
   &:hover {
     background-color: ",
             [Function],
             ";
   }
-  
+
   &:focus {
     outline: 0;
   }
-  
+
   &:active {
     background-color: ",
             [Function],
@@ -121,6 +122,7 @@ exports[`StyledButton Component has correct :active background-color for bgType 
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -136,7 +138,7 @@ exports[`StyledButton Component has correct :active background-color for bgType 
 
 exports[`StyledButton Component has correct default styles 1`] = `
 .c0 {
-  background-color: #ccd1d9;
+  background-color: #5d9cec;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -152,7 +154,7 @@ exports[`StyledButton Component has correct default styles 1`] = `
 }
 
 .c0:hover {
-  background-color: #aab2bd;
+  background-color: #4a89dc;
 }
 
 .c0:focus {
@@ -180,6 +182,7 @@ exports[`StyledButton Component has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -208,17 +211,17 @@ exports[`StyledButton Component has correct default styles 1`] = `
   cursor: pointer;
   transition: background-color 150ms linear;
   margin-right: 2px;
-  
+
   &:hover {
     background-color: ",
             [Function],
             ";
   }
-  
+
   &:focus {
     outline: 0;
   }
-  
+
   &:active {
     background-color: ",
             [Function],
@@ -253,6 +256,7 @@ exports[`StyledButton Component has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }

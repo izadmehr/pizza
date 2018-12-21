@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartPage Component renders correctly 1`] = `
+<section>
+  <styled.h1>
+    Let's Make Some Pizza!
+  </styled.h1>
+</section>
+`;

@@ -2,16 +2,12 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
-import Image from "./BaselineShopping_cart24px";
+import Image from "./Cart-icon";
 
 describe("BaselineShopping_cart24px.svg generated styled component", () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<Image />);
-  });
-
-  it("renders a <svg> tag without crashing", () => {
-    expect(wrapper).toHaveTagName("svg");
   });
 
   it("renders correctly according to snapshot", () => {

@@ -10,7 +10,9 @@ describe("getButtonColor", () => {
         lightRed: "c",
         darkRed: "d",
         lightGrey: "e",
-        darkGrey: "f"
+        darkGrey: "f",
+        primary: "g",
+        secondary: "h"
       }
     }
   });
@@ -34,8 +36,8 @@ describe("getButtonColor", () => {
   it("returns correct default colors", () => {
     const colors = getButtonColor(createFakeProps());
     expect(colors).toEqual({
-      background: "e",
-      hover: "f"
+      background: "g",
+      hover: "h"
     });
   });
 });

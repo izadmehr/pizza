@@ -27,6 +27,7 @@ exports[`ErrorText Component has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -81,6 +82,7 @@ exports[`ErrorText Component has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }

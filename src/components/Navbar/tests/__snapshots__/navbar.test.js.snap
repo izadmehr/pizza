@@ -36,6 +36,7 @@ exports[`Navbar Components Container has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -88,6 +89,7 @@ exports[`Navbar Components Container has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -144,6 +146,7 @@ exports[`Navbar Components Content has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -164,7 +167,7 @@ exports[`Navbar Components Content has correct default styles 1`] = `
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
+
   ",
             "@media (min-width: 62.5rem)",
             " {
@@ -199,6 +202,7 @@ exports[`Navbar Components Content has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -250,6 +254,7 @@ exports[`Navbar Components Links has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -271,7 +276,7 @@ exports[`Navbar Components Links has correct default styles 1`] = `
   flex-direction: column;
   top: 60px;
   width: 100%;
-    
+
   ",
             "@media (min-width: 62.5rem)",
             " {
@@ -308,6 +313,7 @@ exports[`Navbar Components Links has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -509,6 +515,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -591,7 +598,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
+
   ",
                       "@media (min-width: 62.5rem)",
                       " {
@@ -634,7 +641,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   flex-direction: column;
   top: 60px;
   width: 100%;
-    
+
   ",
                             "@media (min-width: 62.5rem)",
                             " {
@@ -688,6 +695,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
                                       },
                                       "layout": Object {
                                         "maxWidth": "62.5rem",
+                                        "minWidth": "25rem",
                                       },
                                     },
                                   },
@@ -797,6 +805,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
                                       },
                                       "layout": Object {
                                         "maxWidth": "62.5rem",
+                                        "minWidth": "25rem",
                                       },
                                     },
                                   },
@@ -906,6 +915,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
                                       },
                                       "layout": Object {
                                         "maxWidth": "62.5rem",
+                                        "minWidth": "25rem",
                                       },
                                     },
                                   },
@@ -1017,24 +1027,24 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   transition: 0.25s ease;
   cursor: pointer;
   display: block;
-  
+
   span:nth-child(1) {
     top: 0;
   }
-  
+
   span:nth-child(2),
   span:nth-child(3) {
     top: 0.6rem;
   }
-  
+
   span:nth-child(4) {
     top: 1.2rem;
   }
-  
+
   ",
                               [Function],
                               ";
-  
+
   ",
                               "@media (min-width: 62.5rem)",
                               " {
@@ -1086,7 +1096,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   background: ",
                                     [Function],
                                     ";
-  
+
   ",
                                     "@media (min-width: 48rem)",
                                     " {
@@ -1140,7 +1150,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   background: ",
                                     [Function],
                                     ";
-  
+
   ",
                                     "@media (min-width: 48rem)",
                                     " {
@@ -1194,7 +1204,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   background: ",
                                     [Function],
                                     ";
-  
+
   ",
                                     "@media (min-width: 48rem)",
                                     " {
@@ -1248,7 +1258,7 @@ exports[`Navbar Components Navbar renders with all props 1`] = `
   background: ",
                                     [Function],
                                     ";
-  
+
   ",
                                     "@media (min-width: 48rem)",
                                     " {
@@ -1332,6 +1342,7 @@ exports[`Navbar Components StyledLink has correct default styles 1`] = `
       },
       "layout": Object {
         "maxWidth": "62.5rem",
+        "minWidth": "25rem",
       },
     }
   }
@@ -1358,6 +1369,7 @@ exports[`Navbar Components StyledLink has correct default styles 1`] = `
                 },
                 "layout": Object {
                   "maxWidth": "62.5rem",
+                  "minWidth": "25rem",
                 },
               },
             },
@@ -1391,6 +1403,7 @@ exports[`Navbar Components StyledLink has correct default styles 1`] = `
         },
         "layout": Object {
           "maxWidth": "62.5rem",
+          "minWidth": "25rem",
         },
       }
     }
@@ -1413,6 +1426,7 @@ exports[`Navbar Components StyledLink has correct default styles 1`] = `
           },
           "layout": Object {
             "maxWidth": "62.5rem",
+            "minWidth": "25rem",
           },
         }
       }

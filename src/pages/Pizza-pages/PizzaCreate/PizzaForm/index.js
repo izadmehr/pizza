@@ -32,7 +32,7 @@ function pizzaPrice(pizzaSizes, values) {
   return parseFloat(floatPrice).toFixed(2);
 }
 
-const PostForm = ({
+export const PizzaForm = ({
   values,
   touched,
   errors,
@@ -113,7 +113,7 @@ const PostForm = ({
   );
 };
 
-PostForm.propTypes = {
+PizzaForm.propTypes = {
   values: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
   errors: PropTypes.shape({
@@ -134,7 +134,7 @@ PostForm.propTypes = {
   })
 };
 
-PostForm.defaultProps = {
+PizzaForm.defaultProps = {
   selectedPizza: undefined
 };
 
@@ -200,7 +200,7 @@ const EnhancedForm = withFormik({
     }
   },
   displayName: "PizzaForm"
-})(PostForm);
+})(PizzaForm);
 
 const mapStateToProps = ({ cart }, { pizzaId }) => ({
   selectedPizza: cart[pizzaId]
