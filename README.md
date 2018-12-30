@@ -1,9 +1,9 @@
 
 ## Create Pizza App
 
- The third version of minimal react apollo boilerplate. I was learning GraphQl several years ago. However, I couldn't find many react-apollo examples. The situation changed a lot since then, but I am trying to keep this repository alive. It is always nice to see a good example. I hope this one will make learning Apollo and GraphQl easier for you.
+ A test project for using Apollo with redux in a sample project.
 
- Backend is provided by [waldo.photos/pizza](http://core-graphql.dev.waldo.photos/pizza) ❤️
+ Backend is provided by [waldo.photos/pizza](http://core-graphql.dev.waldo.photos/pizza)
 
 
 #### Main Dependencies
